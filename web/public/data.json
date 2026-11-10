@@ -1,0 +1,1678 @@
+[
+  {
+    "id": 1,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109004",
+    "title": "프로그래밍입문(2)",
+    "sectionNo": "11001",
+    "type": "전필",
+    "credits": 3,
+    "professor": "강동완",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(1~4)",
+    "rawClassrooms": "아름관-405",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 1,
+        "end": 4,
+        "room": "아름관-405"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109004",
+    "title": "프로그래밍입문(2)",
+    "sectionNo": "11003",
+    "type": "전필",
+    "credits": 3,
+    "professor": "이한수",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(6~9)",
+    "rawClassrooms": "미래관-313",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 6,
+        "end": 9,
+        "room": "미래관-313"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109004",
+    "title": "프로그래밍입문(2)",
+    "sectionNo": "11002",
+    "type": "전필",
+    "credits": 3,
+    "professor": "박래혁",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(1~4)",
+    "rawClassrooms": "미래관-313",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 1,
+        "end": 4,
+        "room": "미래관-313"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109029",
+    "title": "컴퓨터그래픽스",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "강동완",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(6~8)",
+    "rawClassrooms": "Techno Cube(테크노 큐브)-403",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 6,
+        "end": 8,
+        "room": "Techno Cube(테크노 큐브)-403"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109038",
+    "title": "모바일프로그래밍",
+    "sectionNo": "31002",
+    "type": "전선",
+    "credits": 3,
+    "professor": "이한수",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(1~4)",
+    "rawClassrooms": "미래관-320",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 1,
+        "end": 4,
+        "room": "미래관-320"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109038",
+    "title": "모바일프로그래밍",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "이한수",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(1~4)",
+    "rawClassrooms": "미래관-313",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 1,
+        "end": 4,
+        "room": "미래관-313"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109073",
+    "title": "선형대수학",
+    "sectionNo": "11001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "손일수",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(6~8)",
+    "rawClassrooms": "미래관-109",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 6,
+        "end": 8,
+        "room": "미래관-109"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109075",
+    "title": "오픈소스소프트웨어",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "최성록",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "목(1~4)",
+    "rawClassrooms": "미래관-319 미래관-320 미래관-B104",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 4,
+        "start": 1,
+        "end": 4,
+        "room": null
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109078",
+    "title": "기계학습",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "한지형",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(6~8)",
+    "rawClassrooms": "미래관-B104",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 6,
+        "end": 8,
+        "room": "미래관-B104"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109086",
+    "title": "블록체인",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "이창훈",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(2~4)",
+    "rawClassrooms": "미래관-107",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-107"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41002",
+    "type": "전필",
+    "credits": 3,
+    "professor": "손일수",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(2~4)",
+    "rawClassrooms": "미래관-313",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-313"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41008",
+    "type": "전필",
+    "credits": 3,
+    "professor": "최현수",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(6~8)",
+    "rawClassrooms": "미래관-320",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 6,
+        "end": 8,
+        "room": "미래관-320"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41007",
+    "type": "전필",
+    "credits": 3,
+    "professor": "손기욱",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(2~4)",
+    "rawClassrooms": "미래관-109",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-109"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41006",
+    "type": "전필",
+    "credits": 3,
+    "professor": "최성록",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(2~4)",
+    "rawClassrooms": "미래관-107",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-107"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41005",
+    "type": "전필",
+    "credits": 3,
+    "professor": "김진대",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(2~4)",
+    "rawClassrooms": "미래관-323",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-323"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41004",
+    "type": "전필",
+    "credits": 3,
+    "professor": "강동완",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(2~4)",
+    "rawClassrooms": "미래관-320",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-320"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41003",
+    "type": "전필",
+    "credits": 3,
+    "professor": "한지형",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(2~4)",
+    "rawClassrooms": "미래관-319",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-319"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41001",
+    "type": "전필",
+    "credits": 3,
+    "professor": "신용현",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(6~8)",
+    "rawClassrooms": "미래관-310",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 6,
+        "end": 8,
+        "room": "미래관-310"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41009",
+    "type": "전필",
+    "credits": 3,
+    "professor": "전은흡",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(2~4)",
+    "rawClassrooms": "미래관-208",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-208"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109114",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41010",
+    "type": "전필",
+    "credits": 3,
+    "professor": "김성곤",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(2~4)",
+    "rawClassrooms": "미래관-201",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-201"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109130",
+    "title": "소프트웨어공학",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김진대",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(2~4)",
+    "rawClassrooms": "미래관-109",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-109"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109180",
+    "title": "알고리즘",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "이창훈",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(6~9)",
+    "rawClassrooms": "미래관-109 미래관-310 미래관-313",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 6,
+        "end": 9,
+        "room": null
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109261",
+    "title": "웹프로그래밍",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "이길흥",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(1~4)",
+    "rawClassrooms": "미래관-320",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 1,
+        "end": 4,
+        "room": "미래관-320"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109270",
+    "title": "컴파일러구조",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김진대",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(6~8)",
+    "rawClassrooms": "미래관-310",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 6,
+        "end": 8,
+        "room": "미래관-310"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109285",
+    "title": "컴퓨터보안",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "박종혁",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(2~4)",
+    "rawClassrooms": "미래관-109",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-109"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109343",
+    "title": "컴퓨터시스템구조",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "박래혁",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(6~8)",
+    "rawClassrooms": "미래관-109",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 6,
+        "end": 8,
+        "room": "미래관-109"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109417",
+    "title": "Introduction to Programming 2",
+    "sectionNo": "11001",
+    "type": "전필",
+    "credits": 3,
+    "professor": "아비르",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(1~4)",
+    "rawClassrooms": "미래관-310",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 1,
+        "end": 4,
+        "room": "미래관-310"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109481",
+    "title": "고급웹프로그래밍",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "아비르",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(6~9)",
+    "rawClassrooms": "미래관-319",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 6,
+        "end": 9,
+        "room": "미래관-319"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109482",
+    "title": "유닉스프로그래밍",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "신용현",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(1~4)",
+    "rawClassrooms": "미래관-310",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 1,
+        "end": 4,
+        "room": "미래관-310"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109482",
+    "title": "유닉스프로그래밍",
+    "sectionNo": "21002",
+    "type": "전선",
+    "credits": 3,
+    "professor": "신용현",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(6~9)",
+    "rawClassrooms": "미래관-310",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 6,
+        "end": 9,
+        "room": "미래관-310"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109502",
+    "title": "코업(2)",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 6,
+    "professor": "한지형",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "토(1)",
+    "rawClassrooms": "미래관-323",
+    "status": "NEEDS_REVIEW",
+    "meetings": []
+  },
+  {
+    "id": 32,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109503",
+    "title": "코업프로젝트(2)",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 12,
+    "professor": "한지형",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "토(2)",
+    "rawClassrooms": "미래관-323",
+    "status": "NEEDS_REVIEW",
+    "meetings": []
+  },
+  {
+    "id": 33,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109504",
+    "title": "게임프로그래밍",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "전은흡",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "목(6~9)",
+    "rawClassrooms": "미래관-310",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 4,
+        "start": 6,
+        "end": 9,
+        "room": "미래관-310"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109507",
+    "title": "데이터마이닝",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "전은흡",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(6~8)",
+    "rawClassrooms": "미래관-201",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 6,
+        "end": 8,
+        "room": "미래관-201"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109512",
+    "title": "사이버보안",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "손기욱",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(5~7)",
+    "rawClassrooms": "미래관-201",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 5,
+        "end": 7,
+        "room": "미래관-201"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109829",
+    "title": "Linear Algebra",
+    "sectionNo": "11001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "손일수",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "목(1~3)",
+    "rawClassrooms": "미래관-109",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 4,
+        "start": 1,
+        "end": 3,
+        "room": "미래관-109"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109833",
+    "title": "Open Source Software",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "최성록",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "목(6~9)",
+    "rawClassrooms": "미래관-109 미래관-319 미래관-320",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 4,
+        "start": 6,
+        "end": 9,
+        "room": null
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109834",
+    "title": "Database",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김성곤",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "목(6~8)",
+    "rawClassrooms": "미래관-208",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 4,
+        "start": 6,
+        "end": 8,
+        "room": "미래관-208"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109840",
+    "title": "빅데이터처리",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김성곤",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "목(2~4)",
+    "rawClassrooms": "미래관-202",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 4,
+        "start": 2,
+        "end": 4,
+        "room": "미래관-202"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "department": "컴퓨터공학과",
+    "departmentId": 1,
+    "courseId": "109844",
+    "title": "인공지능개론",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "최현수",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(6~8)",
+    "rawClassrooms": "Techno Cube(테크노 큐브)-403",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 6,
+        "end": 8,
+        "room": "Techno Cube(테크노 큐브)-403"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "101083",
+    "title": "프로그래밍입문",
+    "sectionNo": "11002",
+    "type": "전선",
+    "credits": 3,
+    "professor": "정현민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(5~6),목(2)",
+    "rawClassrooms": "창학관-317 창학관-317",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 5,
+        "end": 6,
+        "room": "창학관-317"
+      },
+      {
+        "day": 4,
+        "start": 2,
+        "end": 2,
+        "room": "창학관-317"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "101083",
+    "title": "프로그래밍입문",
+    "sectionNo": "11001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "정현민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(4),목(5~6)",
+    "rawClassrooms": "창학관-317 창학관-317",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 4,
+        "end": 4,
+        "room": "창학관-317"
+      },
+      {
+        "day": 4,
+        "start": 5,
+        "end": 6,
+        "room": "창학관-317"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "161007",
+    "title": "공학수학(2)",
+    "sectionNo": "21004",
+    "type": "전필",
+    "credits": 3,
+    "professor": "이계민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(3),목(1~2)",
+    "rawClassrooms": "창학관-324 창학관-324",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 3,
+        "end": 3,
+        "room": "창학관-324"
+      },
+      {
+        "day": 4,
+        "start": 1,
+        "end": 2,
+        "room": "창학관-324"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187006",
+    "title": "회로이론(2)",
+    "sectionNo": "21001",
+    "type": "전필",
+    "credits": 3,
+    "professor": "이원영",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(5),금(2~3)",
+    "rawClassrooms": "창학관-115 창학관-115",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 5,
+        "end": 5,
+        "room": "창학관-115"
+      },
+      {
+        "day": 5,
+        "start": 2,
+        "end": 3,
+        "room": "창학관-115"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187006",
+    "title": "회로이론(2)",
+    "sectionNo": "21002",
+    "type": "전필",
+    "credits": 3,
+    "professor": "이원영",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(6),금(5~6)",
+    "rawClassrooms": "창학관-115 창학관-115",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 6,
+        "end": 6,
+        "room": "창학관-115"
+      },
+      {
+        "day": 5,
+        "start": 5,
+        "end": 6,
+        "room": "창학관-115"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187007",
+    "title": "전자기학(2)",
+    "sectionNo": "21001",
+    "type": "전필",
+    "credits": 3,
+    "professor": "최의민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(6),금(5~6)",
+    "rawClassrooms": "창학관-113 창학관-113",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 6,
+        "end": 6,
+        "room": "창학관-113"
+      },
+      {
+        "day": 5,
+        "start": 5,
+        "end": 6,
+        "room": "창학관-113"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187007",
+    "title": "전자기학(2)",
+    "sectionNo": "21002",
+    "type": "전필",
+    "credits": 3,
+    "professor": "최의민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(5),금(2~3)",
+    "rawClassrooms": "창학관-113 창학관-113",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 5,
+        "end": 5,
+        "room": "창학관-113"
+      },
+      {
+        "day": 5,
+        "start": 2,
+        "end": 3,
+        "room": "창학관-113"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187008",
+    "title": "신호및시스템",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "박구만",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(1~2),목(3)",
+    "rawClassrooms": "창학관-326 창학관-326",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 1,
+        "end": 2,
+        "room": "창학관-326"
+      },
+      {
+        "day": 4,
+        "start": 3,
+        "end": 3,
+        "room": "창학관-326"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187010",
+    "title": "기초전기전자실험(2)",
+    "sectionNo": "21001",
+    "type": "전필",
+    "credits": 3,
+    "professor": "최현덕",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(5~10)",
+    "rawClassrooms": "창학관-317",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 5,
+        "end": 10,
+        "room": "창학관-317"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187010",
+    "title": "기초전기전자실험(2)",
+    "sectionNo": "21002",
+    "type": "전필",
+    "credits": 3,
+    "professor": "최현덕",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(5~10)",
+    "rawClassrooms": "창학관-317",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 5,
+        "end": 10,
+        "room": "창학관-317"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187017",
+    "title": "프로그래밍방법론",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김화정",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(2~3),수(2)",
+    "rawClassrooms": "창학관-323 창학관-323",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 2,
+        "end": 3,
+        "room": "창학관-323"
+      },
+      {
+        "day": 3,
+        "start": 2,
+        "end": 2,
+        "room": "창학관-323"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187018",
+    "title": "컴퓨터구조",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김화정",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(3),수(5~6)",
+    "rawClassrooms": "창학관-123 창학관-123",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 3,
+        "end": 3,
+        "room": "창학관-123"
+      },
+      {
+        "day": 3,
+        "start": 5,
+        "end": 6,
+        "room": "창학관-123"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187019",
+    "title": "디지털통신",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김동호",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(7),목(5~6)",
+    "rawClassrooms": "창학관-325 창학관-325",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 7,
+        "end": 7,
+        "room": "창학관-325"
+      },
+      {
+        "day": 4,
+        "start": 5,
+        "end": 6,
+        "room": "창학관-325"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187020",
+    "title": "전자회로(2)",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김성권",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(8~10)",
+    "rawClassrooms": "창학관-115",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 8,
+        "end": 10,
+        "room": "창학관-115"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187021",
+    "title": "디지털집적회로",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "이원영",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(5~6),수(7)",
+    "rawClassrooms": "창학관-115 창학관-115",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 5,
+        "end": 6,
+        "room": "창학관-115"
+      },
+      {
+        "day": 3,
+        "start": 7,
+        "end": 7,
+        "room": "창학관-115"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187022",
+    "title": "전력전자",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "최의민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(8),목(7~8)",
+    "rawClassrooms": "창학관-113 창학관-113",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 8,
+        "end": 8,
+        "room": "창학관-113"
+      },
+      {
+        "day": 4,
+        "start": 7,
+        "end": 8,
+        "room": "창학관-113"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187034",
+    "title": "VR/AR",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "정현민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(8~9),목(9)",
+    "rawClassrooms": "창학관-325 창학관-325",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 8,
+        "end": 9,
+        "room": "창학관-325"
+      },
+      {
+        "day": 4,
+        "start": 9,
+        "end": 9,
+        "room": "창학관-325"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187038",
+    "title": "코업(4)",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 6,
+    "professor": "최의민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "일(0)",
+    "rawClassrooms": null,
+    "status": "NEEDS_REVIEW",
+    "meetings": []
+  },
+  {
+    "id": 59,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187039",
+    "title": "코업프로젝트(4)",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 12,
+    "professor": "최의민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "일(1)",
+    "rawClassrooms": null,
+    "status": "NEEDS_REVIEW",
+    "meetings": []
+  },
+  {
+    "id": 60,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187040",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41003",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김성권",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(7~12)",
+    "rawClassrooms": "창학관-318",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 7,
+        "end": 12,
+        "room": "창학관-318"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187040",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41004",
+    "type": "전선",
+    "credits": 3,
+    "professor": "정현민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(7~12)",
+    "rawClassrooms": "창학관-342",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 7,
+        "end": 12,
+        "room": "창학관-342"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187040",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41002",
+    "type": "전선",
+    "credits": 3,
+    "professor": "이계민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(7~12)",
+    "rawClassrooms": "창학관-341",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 7,
+        "end": 12,
+        "room": "창학관-341"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187040",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41005",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김화정",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(7~12)",
+    "rawClassrooms": "창학관-320",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 7,
+        "end": 12,
+        "room": "창학관-320"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187040",
+    "title": "캡스톤디자인(2)",
+    "sectionNo": "41001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "최현덕",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "금(7~12)",
+    "rawClassrooms": "창학관-313",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 5,
+        "start": 7,
+        "end": 12,
+        "room": "창학관-313"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187042",
+    "title": "딥러닝기초",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "이계민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "화(1~2),목(3)",
+    "rawClassrooms": "창학관-323 창학관-323",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 2,
+        "start": 1,
+        "end": 2,
+        "room": "창학관-323"
+      },
+      {
+        "day": 4,
+        "start": 3,
+        "end": 3,
+        "room": "창학관-323"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187043",
+    "title": "시스템프로그래밍",
+    "sectionNo": "31001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "김화정",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "월(5~7)",
+    "rawClassrooms": "창학관-323",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 1,
+        "start": 5,
+        "end": 7,
+        "room": "창학관-323"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "department": "스마트ICT융합공학과",
+    "departmentId": 2,
+    "courseId": "187045",
+    "title": "디지털시스템설계",
+    "sectionNo": "21001",
+    "type": "전선",
+    "credits": 3,
+    "professor": "정현민",
+    "year": 2026,
+    "semester": 2,
+    "rawSchedule": "수(7),목(7~8)",
+    "rawClassrooms": "창학관-317 창학관-317",
+    "status": "CONFIRMED",
+    "meetings": [
+      {
+        "day": 3,
+        "start": 7,
+        "end": 7,
+        "room": "창학관-317"
+      },
+      {
+        "day": 4,
+        "start": 7,
+        "end": 8,
+        "room": "창학관-317"
+      }
+    ]
+  }
+]
