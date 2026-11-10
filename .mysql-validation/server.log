@@ -1,6 +1,0 @@
-2026-11-10T13:22:10.208477Z 0 [System] [MY-010116] [Server] C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe (mysqld 8.0.46) starting as process 760
-2026-11-10T13:22:10.210643Z 0 [Warning] [MY-010091] [Server] Can't create test file C:\Users\gunwo\Documents\ChatGPT\db \mysqld_tmp_file_case_insensitive_test.lower-test
-2026-11-10T13:22:10.210745Z 0 [Warning] [MY-010091] [Server] Can't create test file C:\Users\gunwo\Documents\ChatGPT\db \mysqld_tmp_file_case_insensitive_test.lower-test
-2026-11-10T13:22:10.210983Z 0 [ERROR] [MY-013276] [Server] Failed to set datadir to 'C:\Users\gunwo\Documents\ChatGPT\db \' (OS errno: 2 - No such file or directory)
-2026-11-10T13:22:10.213632Z 0 [ERROR] [MY-010119] [Server] Aborting
-2026-11-10T13:22:10.213718Z 0 [System] [MY-010910] [Server] C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe: Shutdown complete (mysqld 8.0.46)  MySQL Community Server - GPL.

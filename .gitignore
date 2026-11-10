@@ -1,0 +1,25 @@
+# Local database files and test-server state
+.mysql-validation/
+.local/
+
+# Generated validation output
+/validation-*.txt
+/constraint-*.txt
+/seoultech_2026_2_*errors.txt
+/seoultech_2026_2_*results.txt
+/seoultech_2026_2_validation.txt
+*.log
+
+# Dependencies and local configuration
+node_modules/
+.env
+.env.*
+!.env.example
+*.pem
+
+# Editor / OS temporary files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp
