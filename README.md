@@ -137,8 +137,6 @@ MySQL 실행 파일의 기본 위치는 `C:\Program Files\MySQL\MySQL Server 8.0
     └── README.md                   # 웹 실행 보충 안내
 ```
 
-`seoultech_2026_2_resume.sql`은 이전 실행의 특정 오류 상태를 이어가기 위해 작성한 복구 파일입니다. 처음 설치할 때에는 사용하지 않습니다.
-
 ## 7. 문제 해결
 
 | 증상 | 확인할 사항 |
