@@ -13,9 +13,9 @@ CREATE TEMPORARY TABLE expected_ClassSchedule LIKE ClassSchedule;
 INSERT INTO expected_Department (dept_id,dept_name) VALUES (1,'컴퓨터공학과'),(2,'스마트ICT융합공학과');
 INSERT INTO expected_Course VALUES ('109004','데이터베이스',3),('109005','운영체제',3),('209001','사물인터넷',3),('009001','프로그래밍기초',3);
 INSERT INTO expected_CurriculumCourse VALUES
- (1,'109004',2025,'전선',3,2),(1,'109004',2026,'전필',3,2),
- (2,'109004',2026,'전선',3,2),(1,'109005',2026,'전필',3,2),
- (2,'209001',2026,'전필',3,2),(1,'009001',2026,'전필',1,1),(2,'009001',2026,'전선',1,1);
+ (1,'109004',2025,'전선'),(1,'109004',2026,'전필'),
+ (2,'109004',2026,'전선'),(1,'109005',2026,'전필'),
+ (2,'209001',2026,'전필'),(1,'009001',2026,'전필'),(2,'009001',2026,'전선');
 INSERT INTO expected_Section (section_id,course_id,dept_id,`year`,semester,section_no,professor,capacity) VALUES
  (1,'109004',1,2026,2,'11001','김교수',40),
  (2,'109004',1,2026,2,'11002','이교수',40),
@@ -46,7 +46,7 @@ BEGIN
  IF (SELECT COUNT(*) FROM CurriculumCourse) <> (SELECT COUNT(*) FROM expected_CurriculumCourse) THEN
  SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='CurriculumCourse: row count differs from original demo.';
  END IF;
- IF EXISTS (SELECT 1 FROM expected_CurriculumCourse e WHERE NOT EXISTS (SELECT 1 FROM CurriculumCourse a WHERE a.`dept_id` <=> e.`dept_id` AND a.`course_id` <=> e.`course_id` AND a.`curriculum_year` <=> e.`curriculum_year` AND a.`course_type` <=> e.`course_type` AND a.`recommended_year` <=> e.`recommended_year` AND a.`recommended_semester` <=> e.`recommended_semester`)) THEN
+ IF EXISTS (SELECT 1 FROM expected_CurriculumCourse e WHERE NOT EXISTS (SELECT 1 FROM CurriculumCourse a WHERE a.`dept_id` <=> e.`dept_id` AND a.`course_id` <=> e.`course_id` AND a.`curriculum_year` <=> e.`curriculum_year` AND a.`course_type` <=> e.`course_type`)) THEN
  SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='CurriculumCourse: not the exact original demo. Stop; preserve existing data.';
  END IF;
  IF (SELECT COUNT(*) FROM Section) <> (SELECT COUNT(*) FROM expected_Section) THEN
@@ -75,7 +75,7 @@ ALTER TABLE Section MODIFY capacity SMALLINT NULL,
  ADD CONSTRAINT ck_schedule_status CHECK (schedule_status IN ('CONFIRMED','NEEDS_REVIEW')),
  ADD CONSTRAINT ck_reported_count CHECK (reported_count IS NULL OR reported_count >= 0);
 ALTER TABLE ClassSchedule MODIFY classroom VARCHAR(100) NULL;
--- No CurriculumCourse rows are inferred: entry cohort/recommended year not provided.
+-- No CurriculumCourse rows are inferred: curriculum year not provided.
 DELIMITER $$
 CREATE PROCEDURE load_seoultech_2026_2()
 BEGIN

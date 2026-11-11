@@ -25,15 +25,11 @@ CREATE TABLE CurriculumCourse (
  course_id VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
  curriculum_year SMALLINT NOT NULL,
  course_type VARCHAR(2) COLLATE utf8mb4_bin NOT NULL COMMENT '전필 또는 전선',
- recommended_year TINYINT NOT NULL,
- recommended_semester TINYINT NOT NULL,
  PRIMARY KEY (dept_id, course_id, curriculum_year),
  CONSTRAINT fk_curriculum_department FOREIGN KEY (dept_id) REFERENCES Department(dept_id),
  CONSTRAINT fk_curriculum_course FOREIGN KEY (course_id) REFERENCES Course(course_id),
  CONSTRAINT ck_curriculum_year CHECK (curriculum_year BETWEEN 1900 AND 2199),
- CONSTRAINT ck_curriculum_type CHECK (course_type IN ('전필','전선')),
- CONSTRAINT ck_recommended_year CHECK (recommended_year BETWEEN 1 AND 6),
- CONSTRAINT ck_recommended_semester CHECK (recommended_semester IN (1,2))
+ CONSTRAINT ck_curriculum_type CHECK (course_type IN ('전필','전선'))
 ) ENGINE=InnoDB;
 
 CREATE TABLE Section (
@@ -75,9 +71,9 @@ START TRANSACTION;
 INSERT INTO Department (dept_id,dept_name) VALUES (1,'컴퓨터공학과'),(2,'스마트ICT융합공학과');
 INSERT INTO Course VALUES ('109004','데이터베이스',3),('109005','운영체제',3),('209001','사물인터넷',3),('009001','프로그래밍기초',3);
 INSERT INTO CurriculumCourse VALUES
- (1,'109004',2025,'전선',3,2),(1,'109004',2026,'전필',3,2),
- (2,'109004',2026,'전선',3,2),(1,'109005',2026,'전필',3,2),
- (2,'209001',2026,'전필',3,2),(1,'009001',2026,'전필',1,1),(2,'009001',2026,'전선',1,1);
+ (1,'109004',2025,'전선'),(1,'109004',2026,'전필'),
+ (2,'109004',2026,'전선'),(1,'109005',2026,'전필'),
+ (2,'209001',2026,'전필'),(1,'009001',2026,'전필'),(2,'009001',2026,'전선');
 INSERT INTO Section (section_id,course_id,dept_id,`year`,semester,section_no,professor,capacity) VALUES
  (1,'109004',1,2026,2,'11001','김교수',40),
  (2,'109004',1,2026,2,'11002','이교수',40),
