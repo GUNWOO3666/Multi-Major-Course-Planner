@@ -2,26 +2,20 @@
 -- Run once AFTER the original demo script. Replaces ONLY an exact original demo dataset.
 -- If any original data differs, the guard raises an error BEFORE replacement.
 -- In Workbench enable: Query > Stop Script Execution On Errors.
--- NOT a curriculum-year certification: offered year != curriculum year.
 USE multi_major_planner;
 SET NAMES utf8mb4;
 CREATE TEMPORARY TABLE expected_Department LIKE Department;
 CREATE TEMPORARY TABLE expected_Course LIKE Course;
-CREATE TEMPORARY TABLE expected_CurriculumCourse LIKE CurriculumCourse;
 CREATE TEMPORARY TABLE expected_Section LIKE Section;
 CREATE TEMPORARY TABLE expected_ClassSchedule LIKE ClassSchedule;
 INSERT INTO expected_Department (dept_id,dept_name) VALUES (1,'컴퓨터공학과'),(2,'스마트ICT융합공학과');
 INSERT INTO expected_Course VALUES ('109004','데이터베이스',3),('109005','운영체제',3),('209001','사물인터넷',3),('009001','프로그래밍기초',3);
-INSERT INTO expected_CurriculumCourse VALUES
- (1,'109004',2025,'전선'),(1,'109004',2026,'전필'),
- (2,'109004',2026,'전선'),(1,'109005',2026,'전필'),
- (2,'209001',2026,'전필'),(1,'009001',2026,'전필'),(2,'009001',2026,'전선');
-INSERT INTO expected_Section (section_id,course_id,dept_id,`year`,semester,section_no,professor,capacity) VALUES
- (1,'109004',1,2026,2,'11001','김교수',40),
- (2,'109004',1,2026,2,'11002','이교수',40),
- (3,'109005',1,2026,2,'11001','박교수',35),
- (4,'209001',2,2026,2,'21001','최교수',30),
- (5,'009001',2,2026,2,'21002','정교수',40);
+INSERT INTO expected_Section (section_id,course_id,dept_id,`year`,semester,section_no,professor,capacity,offered_course_type) VALUES
+ (1,'109004',1,2026,2,'11001','김교수',40,'전필'),
+ (2,'109004',1,2026,2,'11002','이교수',40,'전필'),
+ (3,'109005',1,2026,2,'11001','박교수',35,'전필'),
+ (4,'209001',2,2026,2,'21001','최교수',30,'전필'),
+ (5,'009001',2,2026,2,'21002','정교수',40,'전선');
 INSERT INTO expected_ClassSchedule (section_id,day_of_week,start_period,end_period,classroom) VALUES
  (1,2,1,2,'공학관101'),(1,4,3,3,'공학관101'),
  (2,1,4,5,'공학관102'),(2,3,4,4,'공학관102'),
@@ -43,16 +37,10 @@ BEGIN
  IF EXISTS (SELECT 1 FROM expected_Course e WHERE NOT EXISTS (SELECT 1 FROM Course a WHERE a.`course_id` <=> e.`course_id` AND a.`title` <=> e.`title` AND a.`credits` <=> e.`credits`)) THEN
  SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Course: not the exact original demo. Stop; preserve existing data.';
  END IF;
- IF (SELECT COUNT(*) FROM CurriculumCourse) <> (SELECT COUNT(*) FROM expected_CurriculumCourse) THEN
- SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='CurriculumCourse: row count differs from original demo.';
- END IF;
- IF EXISTS (SELECT 1 FROM expected_CurriculumCourse e WHERE NOT EXISTS (SELECT 1 FROM CurriculumCourse a WHERE a.`dept_id` <=> e.`dept_id` AND a.`course_id` <=> e.`course_id` AND a.`curriculum_year` <=> e.`curriculum_year` AND a.`course_type` <=> e.`course_type`)) THEN
- SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='CurriculumCourse: not the exact original demo. Stop; preserve existing data.';
- END IF;
  IF (SELECT COUNT(*) FROM Section) <> (SELECT COUNT(*) FROM expected_Section) THEN
  SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Section: row count differs from original demo.';
  END IF;
- IF EXISTS (SELECT 1 FROM expected_Section e WHERE NOT EXISTS (SELECT 1 FROM Section a WHERE a.`section_id` <=> e.`section_id` AND a.`course_id` <=> e.`course_id` AND a.`dept_id` <=> e.`dept_id` AND a.`year` <=> e.`year` AND a.`semester` <=> e.`semester` AND a.`section_no` <=> e.`section_no` AND a.`professor` <=> e.`professor` AND a.`capacity` <=> e.`capacity`)) THEN
+ IF EXISTS (SELECT 1 FROM expected_Section e WHERE NOT EXISTS (SELECT 1 FROM Section a WHERE a.`section_id` <=> e.`section_id` AND a.`course_id` <=> e.`course_id` AND a.`dept_id` <=> e.`dept_id` AND a.`year` <=> e.`year` AND a.`semester` <=> e.`semester` AND a.`section_no` <=> e.`section_no` AND a.`professor` <=> e.`professor` AND a.`capacity` <=> e.`capacity` AND a.`offered_course_type` <=> e.`offered_course_type`)) THEN
  SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Section: not the exact original demo. Stop; preserve existing data.';
  END IF;
  IF (SELECT COUNT(*) FROM ClassSchedule) <> (SELECT COUNT(*) FROM expected_ClassSchedule) THEN
@@ -66,16 +54,13 @@ DELIMITER ;
 CALL guard_original_demo();
 -- Allow genuinely unknown values instead of fabricating capacity or room assignments.
 ALTER TABLE Section MODIFY capacity SMALLINT NULL,
- ADD offered_course_type VARCHAR(2) COLLATE utf8mb4_bin NULL,
  ADD raw_schedule VARCHAR(100) NULL,
  ADD raw_classrooms VARCHAR(300) NULL,
  ADD reported_count SMALLINT NULL COMMENT 'Number shown in screenshot; not verified as capacity',
  ADD schedule_status VARCHAR(20) NOT NULL DEFAULT 'CONFIRMED',
- ADD CONSTRAINT ck_offered_type CHECK (offered_course_type IS NULL OR offered_course_type IN ('전필','전선')),
  ADD CONSTRAINT ck_schedule_status CHECK (schedule_status IN ('CONFIRMED','NEEDS_REVIEW')),
  ADD CONSTRAINT ck_reported_count CHECK (reported_count IS NULL OR reported_count >= 0);
 ALTER TABLE ClassSchedule MODIFY classroom VARCHAR(100) NULL;
--- No CurriculumCourse rows are inferred: curriculum year not provided.
 DELIMITER $$
 CREATE PROCEDURE load_seoultech_2026_2()
 BEGIN
@@ -87,7 +72,6 @@ BEGIN
  CALL guard_original_demo();
  DELETE FROM ClassSchedule;
  DELETE FROM Section;
- DELETE FROM CurriculumCourse;
  DELETE FROM Course;
  DELETE FROM Department;
  INSERT INTO Department (dept_id,dept_name) VALUES (1,'컴퓨터공학과'),(2,'스마트ICT융합공학과');
@@ -295,14 +279,12 @@ DROP PROCEDURE load_seoultech_2026_2;
 DROP PROCEDURE guard_original_demo;
 DROP TEMPORARY TABLE expected_Department;
 DROP TEMPORARY TABLE expected_Course;
-DROP TEMPORARY TABLE expected_CurriculumCourse;
 DROP TEMPORARY TABLE expected_Section;
 DROP TEMPORARY TABLE expected_ClassSchedule;
 
--- Verification: 2 departments, 46 courses, 0 unverified curricula, 67 sections, 79 meetings.
+-- Verification: 2 departments, 46 courses, 67 sections, 79 meetings.
 SELECT 'Department' AS table_name,COUNT(*) AS row_count FROM Department
 UNION ALL SELECT 'Course',COUNT(*) FROM Course
-UNION ALL SELECT 'CurriculumCourse',COUNT(*) FROM CurriculumCourse
 UNION ALL SELECT 'Section',COUNT(*) FROM Section
 UNION ALL SELECT 'ClassSchedule',COUNT(*) FROM ClassSchedule;
 SELECT d.dept_name,COUNT(*) AS sections FROM Section s JOIN Department d ON d.dept_id=s.dept_id GROUP BY d.dept_id,d.dept_name;
@@ -311,7 +293,6 @@ FROM Section s JOIN Course c ON c.course_id=s.course_id WHERE s.schedule_status=
 -- All normal sections must have a meeting: expected 0 rows.
 SELECT s.section_id FROM Section s LEFT JOIN ClassSchedule cs ON cs.section_id=s.section_id
 WHERE s.schedule_status='CONFIRMED' GROUP BY s.section_id HAVING COUNT(cs.schedule_id)=0;
--- Offered-course list independent of CurriculumCourse (not yet certified).
 SELECT d.dept_name,c.course_id,c.title,c.credits,s.section_id,s.section_no,s.offered_course_type,
  s.professor,cs.day_of_week,cs.start_period,cs.end_period,cs.classroom,s.raw_classrooms,s.schedule_status
 FROM Section s JOIN Department d ON d.dept_id=s.dept_id JOIN Course c ON c.course_id=s.course_id

@@ -76,7 +76,7 @@ node server.mjs
 ### 처음 DB를 구성하는 경우
 
 1. **MySQL Server 8.0.16 이상**을 설치하고 실행합니다. MySQL Workbench를 사용하면 SQL 파일 실행과 결과 확인이 편리합니다.
-2. 기존에 `multi_major_planner`의 동명 테이블이 없는 환경에서 [multi_major_planner.sql](multi_major_planner.sql)을 전체 실행합니다. DB와 5개 테이블, 초기 가상 자료가 생성됩니다.
+2. 기존에 `multi_major_planner`의 동명 테이블이 없는 환경에서 [multi_major_planner.sql](multi_major_planner.sql)을 전체 실행합니다. DB와 4개 테이블, 초기 가상 자료가 생성됩니다.
 3. 이어서 [seoultech_2026_2_import.sql](seoultech_2026_2_import.sql)을 전체 실행합니다. 초기 가상 자료를 실제 2026-2 자료로 교체합니다.
 4. 최종 조회 결과가 아래와 같은지 확인합니다.
 
@@ -84,13 +84,20 @@ node server.mjs
 | --- | ---: |
 | Department | 2 |
 | Course | 46 |
-| CurriculumCourse | 0 |
 | Section | 67 |
 | ClassSchedule | 79 |
 
 두 SQL은 **최초 구성 시 순서대로 1회 실행**합니다. 이미 실제 자료를 입력한 DB에는 다시 실행하지 않습니다. 실제 자료 입력 파일은 원래 가상 자료와 정확히 일치할 때만 교체하도록 보호 조건이 있습니다. 오류가 나면 무시하고 계속 실행하지 마세요.
 
-`CurriculumCourse`가 0행인 것은 정상입니다. 화면의 개설 연도를 교육과정 적용 연도로 추정하지 않았기 때문입니다. 웹은 이 테이블이 비어 있어도 동작합니다.
+### 기존 DB를 4개 테이블로 정리
+
+이전 버전에서 실제 자료를 이미 입력했다면 아래 조회로 교육과정 테이블이 비어 있는지 확인합니다. 결과가 **0건**이면 이어서 삭제문을 실행합니다. 강좌·분반·강의시간은 기존 자료를 그대로 사용합니다.
+
+```sql
+SELECT COUNT(*) AS row_count FROM multi_major_planner.CurriculumCourse;
+-- 위 조회가 0건인 경우에만 실행합니다.
+DROP TABLE multi_major_planner.CurriculumCourse;
+```
 
 ### 웹에서 연결
 
@@ -108,10 +115,10 @@ MySQL 실행 파일의 기본 위치는 `C:\Program Files\MySQL\MySQL Server 8.0
 
 - **학기:** 2026년 2학기. 제공된 1학기 화면은 원본으로 보존했지만 현재 웹에는 포함하지 않았습니다.
 - **범위:** 컴퓨터공학과 40개 + 스마트ICT융합공학과 27개 = **67개 분반**, **46개 과목**, 일반 강의시간 **79개**.
-- **핵심 관계:** `Department → Section ← Course`, `Section → ClassSchedule`. `CurriculumCourse`는 학과·과목·교육과정 연도를 연결합니다.
+- **핵심 관계:** `Department → Section ← Course`, `Section → ClassSchedule`.
 - **제약조건:** PK/FK/UNIQUE/CHECK로 식별자·참조 무결성·분반 중복·요일과 교시 범위를 관리합니다.
 - **충돌 판정:** 같은 학기·요일에서 `시작A ≤ 종료B AND 시작B ≤ 종료A`이면 충돌입니다. 종료 교시를 포함합니다.
-- **전필/전선:** 개설 화면의 분류를 사용합니다. 학생의 입학 연도별 이수요건이나 졸업요건을 판정하지 않습니다.
+- **전필/전선:** `Section.offered_course_type`에 개설 분반의 전필·전선 분류를 저장합니다. 시연 모드에서는 같은 분류를 JSON의 `type` 값으로 제공합니다.
 - **코업 등 4개 분반:** 실제 시간 의미가 확인되지 않아 `시간 확인 필요`로 안내합니다. 충돌이 없다고 판단할 수 없습니다.
 - **강의실:** 여러 강의실의 시간별 대응이 불명확하면 원문을 보존하고 `강의실 확인 필요`로 표시합니다.
 - **선택 저장:** 브라우저에 저장합니다. 로그인이나 학생별 수강 계획 DB 저장 기능은 포함하지 않습니다.

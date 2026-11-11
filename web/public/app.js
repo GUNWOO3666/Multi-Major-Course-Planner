@@ -116,7 +116,7 @@ $('#reset-button').onclick = () => { if (!selected.length) return toast('초기�
 $('#export-button').onclick = () => {
   if (!selected.length) return toast('먼저 강좌를 담아 주세요.');
   const current = selectedSections();
-  const content = { title:'서울과학기술대학교 2026-2 다전공 시간표', source, exportedAt:new Date().toISOString(), totalCredits:totalCredits(current), sections:current, conflicts:conflicts(current), note:'개설 화면 기준. 확인 필요 강좌와 학생별 교육과정 이수요건은 별도 확인.' };
+  const content = { title:'서울과학기술대학교 2026-2 다전공 시간표', source, exportedAt:new Date().toISOString(), totalCredits:totalCredits(current), sections:current, conflicts:conflicts(current), note:'전필/전선은 개설 화면 기준입니다. 확인 필요로 표시된 강좌는 실제 강의시간을 확인해 주세요.' };
   const url = URL.createObjectURL(new Blob([JSON.stringify(content,null,2)], {type:'application/json'}));
   const a = document.createElement('a'); a.href=url; a.download='나의_시간표_2026_2.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url),1000); toast('선택 시간표를 파일로 저장했어요.');
 };

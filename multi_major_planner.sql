@@ -20,27 +20,17 @@ CREATE TABLE Course (
  CONSTRAINT ck_course_credits CHECK (credits > 0 AND credits <= 30)
 ) ENGINE=InnoDB;
 
-CREATE TABLE CurriculumCourse (
- dept_id INT UNSIGNED NOT NULL,
- course_id VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
- curriculum_year SMALLINT NOT NULL,
- course_type VARCHAR(2) COLLATE utf8mb4_bin NOT NULL COMMENT '전필 또는 전선',
- PRIMARY KEY (dept_id, course_id, curriculum_year),
- CONSTRAINT fk_curriculum_department FOREIGN KEY (dept_id) REFERENCES Department(dept_id),
- CONSTRAINT fk_curriculum_course FOREIGN KEY (course_id) REFERENCES Course(course_id),
- CONSTRAINT ck_curriculum_year CHECK (curriculum_year BETWEEN 1900 AND 2199),
- CONSTRAINT ck_curriculum_type CHECK (course_type IN ('전필','전선'))
-) ENGINE=InnoDB;
-
 CREATE TABLE Section (
  section_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
  course_id VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
- dept_id INT UNSIGNED NOT NULL COMMENT '개설 학과; 교육과정 인정 학과와 다를 수 있음',
+ dept_id INT UNSIGNED NOT NULL COMMENT '개설 학과',
  `year` SMALLINT NOT NULL,
  semester TINYINT NOT NULL,
  section_no VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
  professor VARCHAR(100) NOT NULL,
  capacity SMALLINT NOT NULL,
+ offered_course_type VARCHAR(2) COLLATE utf8mb4_bin NULL COMMENT '개설 화면의 전필/전선',
+ CONSTRAINT ck_offered_type CHECK (offered_course_type IS NULL OR offered_course_type IN ('전필','전선')),
  CONSTRAINT uq_section UNIQUE (`year`, semester, course_id, section_no),
  CONSTRAINT fk_section_course FOREIGN KEY (course_id) REFERENCES Course(course_id),
  CONSTRAINT fk_section_department FOREIGN KEY (dept_id) REFERENCES Department(dept_id),
@@ -70,16 +60,12 @@ CREATE TABLE ClassSchedule (
 START TRANSACTION;
 INSERT INTO Department (dept_id,dept_name) VALUES (1,'컴퓨터공학과'),(2,'스마트ICT융합공학과');
 INSERT INTO Course VALUES ('109004','데이터베이스',3),('109005','운영체제',3),('209001','사물인터넷',3),('009001','프로그래밍기초',3);
-INSERT INTO CurriculumCourse VALUES
- (1,'109004',2025,'전선'),(1,'109004',2026,'전필'),
- (2,'109004',2026,'전선'),(1,'109005',2026,'전필'),
- (2,'209001',2026,'전필'),(1,'009001',2026,'전필'),(2,'009001',2026,'전선');
-INSERT INTO Section (section_id,course_id,dept_id,`year`,semester,section_no,professor,capacity) VALUES
- (1,'109004',1,2026,2,'11001','김교수',40),
- (2,'109004',1,2026,2,'11002','이교수',40),
- (3,'109005',1,2026,2,'11001','박교수',35),
- (4,'209001',2,2026,2,'21001','최교수',30),
- (5,'009001',2,2026,2,'21002','정교수',40);
+INSERT INTO Section (section_id,course_id,dept_id,`year`,semester,section_no,professor,capacity,offered_course_type) VALUES
+ (1,'109004',1,2026,2,'11001','김교수',40,'전필'),
+ (2,'109004',1,2026,2,'11002','이교수',40,'전필'),
+ (3,'109005',1,2026,2,'11001','박교수',35,'전필'),
+ (4,'209001',2,2026,2,'21001','최교수',30,'전필'),
+ (5,'009001',2,2026,2,'21002','정교수',40,'전선');
 INSERT INTO ClassSchedule (section_id,day_of_week,start_period,end_period,classroom) VALUES
  (1,2,1,2,'공학관101'),(1,4,3,3,'공학관101'),
  (2,1,4,5,'공학관102'),(2,3,4,4,'공학관102'),
@@ -88,27 +74,20 @@ INSERT INTO ClassSchedule (section_id,day_of_week,start_period,end_period,classr
  (5,1,1,2,'ICT관302'),(5,3,1,1,'ICT관302');
 COMMIT;
 
--- Expected counts: 2 / 4 / 7 / 5 / 10.
+-- Expected counts: 2 / 4 / 5 / 10.
 SELECT 'Department' AS table_name, COUNT(*) AS row_count FROM Department
 UNION ALL SELECT 'Course', COUNT(*) FROM Course
-UNION ALL SELECT 'CurriculumCourse', COUNT(*) FROM CurriculumCourse
 UNION ALL SELECT 'Section', COUNT(*) FROM Section
 UNION ALL SELECT 'ClassSchedule', COUNT(*) FROM ClassSchedule;
 
--- Recognition by selected departments and curriculum year; one row per meeting.
--- A shared course intentionally appears once per recognizing department.
-SET @curriculum_year = 2026;
-SELECT d.dept_name AS curriculum_department, cc.course_type, c.course_id,c.title,c.credits,
- od.dept_name AS offering_department,s.section_id,s.section_no,s.professor,
- cs.day_of_week,cs.start_period,cs.end_period,cs.classroom
-FROM CurriculumCourse cc
-JOIN Department d ON d.dept_id=cc.dept_id
-JOIN Course c ON c.course_id=cc.course_id
-JOIN Section s ON s.course_id=c.course_id
-JOIN Department od ON od.dept_id=s.dept_id
-JOIN ClassSchedule cs ON cs.section_id=s.section_id
-WHERE cc.dept_id IN (1,2) AND cc.curriculum_year=@curriculum_year
- AND s.`year`=2026 AND s.semester=2
+-- Offered courses by opening department; one row per meeting.
+SELECT d.dept_name AS offering_department,s.offered_course_type,c.course_id,c.title,c.credits,
+ s.section_id,s.section_no,s.professor,cs.day_of_week,cs.start_period,cs.end_period,cs.classroom
+FROM Section s
+JOIN Department d ON d.dept_id=s.dept_id
+JOIN Course c ON c.course_id=s.course_id
+LEFT JOIN ClassSchedule cs ON cs.section_id=s.section_id
+WHERE s.dept_id IN (1,2) AND s.`year`=2026 AND s.semester=2
 ORDER BY d.dept_id,c.course_id,s.section_no,cs.day_of_week;
 
 -- ER minimum participation audit: expected zero rows.
