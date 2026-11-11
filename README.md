@@ -89,16 +89,6 @@ node server.mjs
 
 두 SQL은 **최초 구성 시 순서대로 1회 실행**합니다. 이미 실제 자료를 입력한 DB에는 다시 실행하지 않습니다. 실제 자료 입력 파일은 원래 가상 자료와 정확히 일치할 때만 교체하도록 보호 조건이 있습니다. 오류가 나면 무시하고 계속 실행하지 마세요.
 
-### 기존 DB를 4개 테이블로 정리
-
-이전 버전에서 실제 자료를 이미 입력했다면 아래 조회로 교육과정 테이블이 비어 있는지 확인합니다. 결과가 **0건**이면 이어서 삭제문을 실행합니다. 강좌·분반·강의시간은 기존 자료를 그대로 사용합니다.
-
-```sql
-SELECT COUNT(*) AS row_count FROM multi_major_planner.CurriculumCourse;
--- 위 조회가 0건인 경우에만 실행합니다.
-DROP TABLE multi_major_planner.CurriculumCourse;
-```
-
 ### 웹에서 연결
 
 1. `web/start.cmd`로 웹을 실행합니다.
